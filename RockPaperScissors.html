@@ -15,8 +15,7 @@
           return "paper";
         } else if (computerChoice === 1) {
           return "rock";
-        } else;
-        {
+        } else {
           return "scissors";
         }
       }
@@ -24,10 +23,7 @@
       function getPlayerChoice() {
         return prompt("Enter Rock/Paper/Scissors").toLowerCase();
       }
-      //Copy a function into a variable
-      let playerSelection = getPlayerChoice();
-      let computerSelection = getComputerChoice();
-      //Compare strings
+      // Compare strings
       function compare(playerSelection, computerSelection) {
         if (playerSelection === computerSelection) {
           console.log("It's a tie");
@@ -51,12 +47,16 @@
           }
         }
       }
-
-      for (i = 0; i <= 4; i++) {
-        let playerSelection = getPlayerChoice();
-        let computerSelection = getComputerChoice();
-        compare(playerSelection, computerSelection);
+      // Play the game
+      function playGame() {
+        for (let i = 0; i <= 4; i++) {
+          let playerSelection = getPlayerChoice();
+          let computerSelection = getComputerChoice();
+          compare(playerSelection, computerSelection);
+        }
       }
+      // Call the playgame function to start the game
+      playGame();
     </script>
   </body>
 </html>
