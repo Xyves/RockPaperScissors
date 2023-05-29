@@ -1,0 +1,16 @@
+body {
+  background-image: url(img/aqua-wallpaper.jpg);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.round {
+  font-size: 4em;
+  color: #ffffff;
+  text-align: center;
+  padding: 30px;
+}
+
+.block {
+  width: 100px;
+  height: auto;
+  color: green;
+}
