@@ -1,49 +1,107 @@
-// Computer choice
+let userScore = 0;
+let computerScore = 0;
+
+const resetButton = document.querySelector(".reset");
+const roundCountElement = document.getElementById("roundCount");
+const userScoreElement = document.getElementById("userScore");
+const computerScoreElement = document.getElementById("computerScore");
+
+function updateScore() {
+  document.getElementById("userScore").textContent = userScore;
+  document.getElementById("computerScore").textContent = computerScore;
+}
+
+function updateResult(result) {
+  let roundCountElement = document.getElementById("roundCount");
+  let roundNumber = parseInt(roundCountElement.textContent);
+  roundNumber++;
+  roundCountElement.textContent = roundNumber;
+}
+
 function getComputerChoice() {
-  let computerChoice = Math.floor(Math.random() * (2 + 1));
+  let computerChoice = Math.floor(Math.random() * 3);
   if (computerChoice === 0) {
-    return "paper";
-  } else if (computerChoice === 1) {
     return "rock";
+  } else if (computerChoice === 1) {
+    return "paper";
   } else {
     return "scissors";
   }
 }
-// User choice
-function getPlayerChoice() {
-  return prompt("Enter Rock/Paper/Scissors").toLowerCase();
+
+function handleButtonClick(choice) {
+  let computerChoice = getComputerChoice();
+  let result = compare(choice, computerChoice);
+  updateScore();
+  updateResult(result);
+  toggleUserSelection(choice);
+  toggleComputerSelection(computerChoice);
 }
-// Compare strings
-function compare(playerSelection, computerSelection) {
-  if (playerSelection === computerSelection) {
-    console.log("It's a tie");
-  } else if (playerSelection === "rock") {
+
+function toggleUserSelection(choice) {
+  let userImage = document.getElementById("userImage");
+  userImage.className = "img " + choice;
+}
+
+function toggleComputerSelection(choice) {
+  let computerImage = document.getElementById("computerImage");
+  computerImage.className = "compImg " + choice;
+}
+
+function compare(playerChoice, computerSelection) {
+  if (playerChoice === computerSelection) {
+    document.getElementById("result").textContent = "It's a tie";
+    return "tie";
+  } else if (playerChoice === "rock") {
     if (computerSelection === "scissors") {
-      console.log("You win, rock beats scissors");
+      document.getElementById("result").textContent = "You win!";
+      userScore++;
+      return "win";
     } else {
-      console.log("You lose, paper beats rock");
+      document.getElementById("result").textContent = "You lose!";
+      computerScore++;
+      return "lose";
     }
-  } else if (playerSelection === "paper") {
+  } else if (playerChoice === "paper") {
     if (computerSelection === "rock") {
-      console.log("You win, paper beats rock");
+      document.getElementById("result").textContent = "You win!";
+      userScore++;
+      return "win";
     } else {
-      console.log("You lose, scissors beats paper");
+      document.getElementById("result").textContent = "You lose!";
+      computerScore++;
+      return "lose";
     }
-  } else if (playerSelection === "scissors") {
+  } else if (playerChoice === "scissors") {
     if (computerSelection === "rock") {
-      console.log("You lose, rock beats scissors");
+      document.getElementById("result").textContent = "You lose!";
+      computerScore++;
+      return "lose";
     } else {
-      console.log("You win, scissors beat paper");
+      document.getElementById("result").textContent = "You win!";
+      userScore++;
+      return "win";
     }
   }
 }
-// Play the game
-function playGame() {
-  for (let i = 0; i <= 4; i++) {
-    let playerSelection = getPlayerChoice();
-    let computerSelection = getComputerChoice();
-    compare(playerSelection, computerSelection);
-  }
-}
-// Call the playgame function to start the game
-playGame();
+
+document.getElementById("rock").addEventListener("click", function () {
+  handleButtonClick("rock");
+});
+
+document.getElementById("paper").addEventListener("click", function () {
+  handleButtonClick("paper");
+});
+
+document.getElementById("scissors").addEventListener("click", function () {
+  handleButtonClick("scissors");
+});
+resetButton.addEventListener("click", function () {
+  roundCountElement.textContent = "0";
+
+  userScore = 0;
+  userScoreElement.textContent = userScore;
+
+  computerScore = 0;
+  computerScoreElement.textContent = computerScore;
+});
