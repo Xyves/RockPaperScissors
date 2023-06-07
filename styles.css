@@ -1,16 +1,130 @@
 body {
-  background-image: url(img/aqua-wallpaper.jpg);
+  background-color: #eee2de;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
+
+#container {
+  width: 50%;
+  margin: 0 auto;
+}
+
 .round {
   font-size: 4em;
   color: #ffffff;
   text-align: center;
-  padding: 30px;
+  padding: 5px;
+  margin: 10px;
+}
+
+#div-container h1 {
+  text-align: center;
+}
+
+#div-container {
+  height: 400px;
+  margin-bottom: 2%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .block {
-  width: 100px;
-  height: auto;
-  color: green;
+  width: 35%;
+  height: 65%;
+  background-color: #000000;
+  margin: 0 9%;
+  border-radius: 36px 36px 0 0;
+}
+
+.divContainer {
+  background-color: #53534f;
+  height: 12%;
+  border-radius: 35px 35px 0 0;
+  font-size: 23px;
+  text-align: center;
+  padding: 15px;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.container-2 {
+  display: flex;
+  justify-content: center;
+  gap: 17px;
+  margin: 20px 250px 0 250px;
+  margin-top: px;
+}
+
+.choice {
+  padding: 40px;
+  margin: 0 10%;
+  cursor: pointer;
+}
+
+#scissors {
+  background-image: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fhusseinhewehii.github.io%2FRock_Paper_Scissors%2Fscissors.png&f=1&nofb=1&ipt=29a3b93f91ed50e1a4af428b0c97b5c3cedb3d9b91a68c9259777bb504b30dda&ipo=images");
+  background-size: cover;
+  border-radius: 48%;
+}
+
+#rock {
+  background-image: url("https://husseinhewehii.github.io/Rock_Paper_Scissors/rock.png");
+  background-size: cover;
+  border-radius: 48%;
+}
+
+#paper {
+  background-image: url("https://husseinhewehii.github.io/Rock_Paper_Scissors/paper.png");
+  background-size: cover;
+  border-radius: 55%;
+}
+
+.img,
+.compImg {
+  display: flex;
+  width: 80%;
+  height: 55%;
+  margin: 15% auto;
+}
+
+h2 {
+  text-align: center;
+  font-size: 25px;
+}
+
+#roundNumber {
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+#result {
+  font-weight: bold;
+  font: size 25px;
+  text-align: center;
+  margin-bottom: -10px;
+}
+
+.rock {
+  background-image: url(icon/rock.ico);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.paper {
+  background-image: url(icon/paper.ico);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.scissors {
+  background-image: url(icon/scissors.ico);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.reset {
+  margin: 2% 48%;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: red;
 }
