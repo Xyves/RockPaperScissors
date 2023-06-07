@@ -10,12 +10,31 @@
   </head>
   <body>
     <div id="container">
-      <h2 class="round">Round number</h2>
+      <h1 class="round">Round number: <span id ="roundCount">0</span></h2>
+        <span id="roundNumber"></span>
+<h3 id="result"></h3>
       <div id="div-container">
-        <div class="rock block"></div>
-        <div class="paper block"></div>
-        <div class="scissors block"></div>
+        <div class="user block">
+          <div class="divContainer user">YOU: <span id="userScore"></span></div>
+          <div class="img" id="userImage"></div>
+        </div>
+        <div class="computer block">
+          <div class="divContainer">COMPUTER: <span id="computerScore"></span></div>
+          <div class="compImg" id="computerImage"></div>
+        </div>
+        </div>
+      </div>
+
+      <h2>Choose one!</h1>
+        <div container-3>
+     
+      </div>
+      <div class="container-2">
+        <button type="button" id="rock"class="choice "></button>
+        <button type="button" id="paper"class="choice "></button>
+        <button type="button" id="scissors" class="choice "></button>
       </div>
     </div>
+    <button class="reset">RESET</button>
   </body>
 </html>
